@@ -17,3 +17,13 @@ class School:
         for student in self.students:
             if student.school_id == id:
                 print(student)
+    
+    def add_student(self, student_data):
+        print(f"{student_data['name']} has been added!\n")
+        return self.students.append(Student(**student_data))
+
+    def delete_student(self, id):
+        for student in self.students:
+            if student.school_id == id:
+                self.students.remove(student)
+                print(f"{student.name} has been removed!\n")
